@@ -40,7 +40,5 @@ class CurrencyCell: UITableViewCell {
             averageValue.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
             averageValue.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10)
         ])
-        print(contentView.frame.width)
-        print(self.frame.width)
     }
 }
