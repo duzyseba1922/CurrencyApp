@@ -24,6 +24,10 @@ class CurrencyDetailsController: UIViewController, UITableViewDataSource, UITabl
     var passedTableType = String()
     var jsonData = JSON()
     
+    override func viewWillAppear(_ animated: Bool) {
+        spinner.startAnimating()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(false, animated: false)
@@ -32,6 +36,7 @@ class CurrencyDetailsController: UIViewController, UITableViewDataSource, UITabl
         getData(type: passedTableType)
     }
     
+    //MARK: Setting controlls and constraints
     func setupConstraints() {
         navigationItem.title = passedName
         view.backgroundColor = .white
@@ -41,12 +46,16 @@ class CurrencyDetailsController: UIViewController, UITableViewDataSource, UITabl
         view.addSubview(endDate)
         view.addSubview(startLabel)
         view.addSubview(endLabel)
+        view.addSubview(spinner)
         
+        spinner.translatesAutoresizingMaskIntoConstraints = false
         tableView.translatesAutoresizingMaskIntoConstraints = false
         startDate.translatesAutoresizingMaskIntoConstraints = false
         endDate.translatesAutoresizingMaskIntoConstraints = false
         startLabel.translatesAutoresizingMaskIntoConstraints = false
         endLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        spinner.color = .red
         
         startLabel.text = "Start Date"
         endLabel.text = "End Date"
@@ -75,10 +84,10 @@ class CurrencyDetailsController: UIViewController, UITableViewDataSource, UITabl
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            tableView.heightAnchor.constraint(equalToConstant: 600),
+            tableView.heightAnchor.constraint(equalToConstant: self.view.frame.height * 2/3),
             tableView.bottomAnchor.constraint(equalTo: startLabel.topAnchor, constant: -20)
         ])
-            
+        
         NSLayoutConstraint.activate([
             startLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
@@ -97,9 +106,15 @@ class CurrencyDetailsController: UIViewController, UITableViewDataSource, UITabl
             endDate.topAnchor.constraint(equalTo: endLabel.bottomAnchor, constant: 20),
             endDate.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
+        
+        NSLayoutConstraint.activate([
+            spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
     }
     
     @objc func datePickerChanged(picker: UIDatePicker) {
+        spinner.startAnimating()
         if (startDate.date > endDate.date) {
             endDate.date = Date()
             getData(type: passedTableType)
@@ -116,6 +131,7 @@ class CurrencyDetailsController: UIViewController, UITableViewDataSource, UITabl
         self.spinner.stopAnimating()
     }
     
+    //MARK: TableView functions
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return jsonData["rates"].count
     }
@@ -130,9 +146,11 @@ class CurrencyDetailsController: UIViewController, UITableViewDataSource, UITabl
         } else {
             cell.averageValue.text = String(format: "%.4f", jsonData["rates"][indexPath.row]["mid"].floatValue)
         }
+        spinner.stopAnimating()
         return cell
     }
     
+    //MARK: Request method
     func getData(type: String) {
         let timeFormatter = DateFormatter()
         timeFormatter.dateFormat = "YYYY-MM-dd"

@@ -20,6 +20,7 @@ class CurrencyListController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        spinner.startAnimating()
         getData(type: chosenTableType)
     }
     
@@ -27,6 +28,7 @@ class CurrencyListController: UIViewController, UITableViewDelegate, UITableView
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
+    //MARK: Setting controlls and constraints
     override func loadView() {
         super.loadView()
         self.view.backgroundColor = .white
@@ -62,10 +64,18 @@ class CurrencyListController: UIViewController, UITableViewDelegate, UITableView
         tableView.refreshControl = refreshControl
         refreshControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
         
+        view.addSubview(spinner)
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        spinner.color = .red
+        
+        NSLayoutConstraint.activate([
+            spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
     }
     
     @objc func changeTableType(_ sender: UISegmentedControl) {
-        self.spinner.startAnimating()
+        spinner.startAnimating()
         switch sender.selectedSegmentIndex {
         case 1:
             chosenTableType = "B"
@@ -75,7 +85,6 @@ class CurrencyListController: UIViewController, UITableViewDelegate, UITableView
             chosenTableType = "A"
         }
         getData(type: chosenTableType)
-        self.spinner.stopAnimating()
     }
     
     @objc func refresh(_ sender: Any) {
@@ -84,7 +93,7 @@ class CurrencyListController: UIViewController, UITableViewDelegate, UITableView
         self.refreshControl.endRefreshing()
         self.spinner.stopAnimating()
     }
-    
+    //MARK: TableView functions
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = CurrencyDetailsController()
         vc.passedName = jsonData[0]["rates"][indexPath.row]["currency"].stringValue
@@ -111,9 +120,11 @@ class CurrencyListController: UIViewController, UITableViewDelegate, UITableView
         } else {
             cell.averageValue.text = String(format: "%.4f", jsonData[0]["rates"][indexPath.row]["mid"].floatValue)
         }
+        spinner.stopAnimating()
         return cell
     }
     
+    //MARK: Request method
     func getData(type: String) {
         let task = URLSession.shared.dataTask(with: URL(string: "http://api.nbp.pl/api/exchangerates/tables/\(type)/")!) { data, response, error in
             guard let data=data else { return }
