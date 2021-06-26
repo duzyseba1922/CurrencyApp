@@ -25,12 +25,13 @@ class CurrencyCell: UITableViewCell {
         NSLayoutConstraint.activate([
             currencyName.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
             currencyName.leadingAnchor.constraint(equalTo: self.date.trailingAnchor, constant: 20),
-            currencyName.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10)
+            currencyName.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10),
+            currencyName.widthAnchor.constraint(equalToConstant: 140)
         ])
         currencyCode.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             currencyCode.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
-            currencyCode.trailingAnchor.constraint(equalTo: self.averageValue.leadingAnchor, constant: -40),
+            currencyCode.leadingAnchor.constraint(equalTo: self.currencyName.trailingAnchor, constant: 20),
             currencyCode.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10)
         ])
         averageValue.translatesAutoresizingMaskIntoConstraints = false
