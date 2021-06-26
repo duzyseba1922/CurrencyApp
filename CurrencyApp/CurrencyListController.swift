@@ -13,10 +13,10 @@ class CurrencyListController: UIViewController, UITableViewDelegate, UITableView
     var tableTypeSwitcher = UISegmentedControl()
     let refreshControl = UIRefreshControl()
     var tableView = UITableView()
-    var cellId = "cellId"
     var spinner = UIActivityIndicatorView()
-    var jsonData = JSON()
+    var cellId = "cellId"
     var chosenTableType = "A"
+    var jsonData = JSON()
     
     override func viewDidLoad() {
         super.viewDidLoad()

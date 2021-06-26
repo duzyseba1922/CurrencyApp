@@ -12,8 +12,8 @@
 		D1304BFA2684DC760011D796 /* CurrencyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1304BF92684DC760011D796 /* CurrencyCell.swift */; };
 		D14D99E626849B990010D609 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14D99E526849B990010D609 /* AppDelegate.swift */; };
 		D14D99EA26849B990010D609 /* CurrencyListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14D99E926849B990010D609 /* CurrencyListController.swift */; };
-		D14D99EF26849BA40010D609 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D14D99EE26849BA40010D609 /* Assets.xcassets */; };
 		D14D99F226849BA40010D609 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D14D99F026849BA40010D609 /* LaunchScreen.storyboard */; };
+		D19F1DAE268741150077E948 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D19F1DAD268741150077E948 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,9 +25,9 @@
 		D14D99E226849B990010D609 /* CurrencyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D14D99E526849B990010D609 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D14D99E926849B990010D609 /* CurrencyListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyListController.swift; sourceTree = "<group>"; };
-		D14D99EE26849BA40010D609 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D14D99F126849BA40010D609 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D14D99F326849BA40010D609 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D19F1DAD268741150077E948 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../Downloads/AppIcons/Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				D14D99E526849B990010D609 /* AppDelegate.swift */,
-				D14D99EE26849BA40010D609 /* Assets.xcassets */,
+				D19F1DAD268741150077E948 /* Assets.xcassets */,
 				D14D99F026849BA40010D609 /* LaunchScreen.storyboard */,
 				D14D99F326849BA40010D609 /* Info.plist */,
 				D1304BF92684DC760011D796 /* CurrencyCell.swift */,
@@ -151,7 +151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D14D99F226849BA40010D609 /* LaunchScreen.storyboard in Resources */,
-				D14D99EF26849BA40010D609 /* Assets.xcassets in Resources */,
+				D19F1DAE268741150077E948 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
