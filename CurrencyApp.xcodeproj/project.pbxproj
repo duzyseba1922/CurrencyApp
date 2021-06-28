@@ -13,7 +13,7 @@
 		D14D99E626849B990010D609 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14D99E526849B990010D609 /* AppDelegate.swift */; };
 		D14D99EA26849B990010D609 /* CurrencyListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14D99E926849B990010D609 /* CurrencyListController.swift */; };
 		D14D99F226849BA40010D609 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D14D99F026849BA40010D609 /* LaunchScreen.storyboard */; };
-		D19F1DAE268741150077E948 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D19F1DAD268741150077E948 /* Assets.xcassets */; };
+		D19F52C22689BEE30076E06F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D19F52C02689BEE20076E06F /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +27,7 @@
 		D14D99E926849B990010D609 /* CurrencyListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyListController.swift; sourceTree = "<group>"; };
 		D14D99F126849BA40010D609 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D14D99F326849BA40010D609 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D19F1DAD268741150077E948 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../Downloads/AppIcons/Assets.xcassets; sourceTree = "<group>"; };
+		D19F52C02689BEE20076E06F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,8 +71,8 @@
 		D14D99E426849B990010D609 /* CurrencyApp */ = {
 			isa = PBXGroup;
 			children = (
+				D19F52C02689BEE20076E06F /* Assets.xcassets */,
 				D14D99E526849B990010D609 /* AppDelegate.swift */,
-				D19F1DAD268741150077E948 /* Assets.xcassets */,
 				D14D99F026849BA40010D609 /* LaunchScreen.storyboard */,
 				D14D99F326849BA40010D609 /* Info.plist */,
 				D1304BF92684DC760011D796 /* CurrencyCell.swift */,
@@ -151,7 +151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D14D99F226849BA40010D609 /* LaunchScreen.storyboard in Resources */,
-				D19F1DAE268741150077E948 /* Assets.xcassets in Resources */,
+				D19F52C22689BEE30076E06F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
